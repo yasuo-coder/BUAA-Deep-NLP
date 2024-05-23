@@ -9,7 +9,6 @@ from collections import Counter
 
 
 def read_multiple_txt_files(directory_path):
-    # 存储所有文件内容的字典，键是文件名，值是文件内容
     all_texts = []
 
     # 遍历指定目录下的所有文件
