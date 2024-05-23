@@ -50,8 +50,8 @@ def verify_zipfs_law(text):
     plt.savefig('./Zipf_Law.jpg')
     plt.show()
 
-# 调用函数，替换'directory_path'为您的目录路径
-texts_directory_path = 'D:\\PyCharmProject\\BUAA\\NLP\\小作业1\\中文语料库'  # 假设您的.txt文件存储在这个目录下
+# 调用函数
+texts_directory_path = 'D:\\PyCharmProject\\BUAA\\NLP\\小作业1\\中文语料库'  
 txt = read_multiple_txt_files(texts_directory_path)
 text = str(txt)     # 类型转换
 
