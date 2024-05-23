@@ -8,7 +8,6 @@ from collections import Counter
 
 
 def read_multiple_txt_files(directory_path):
-    # 存储所有文件内容的字典，键是文件名，值是文件内容
     all_texts = []
 
     # 遍历指定目录下的所有文件
@@ -92,8 +91,8 @@ def calc_entropy_trigram(word, is_ci):
             print("基于字的三元模型的中文信息熵为：{}比特/字".format(entropy))
         return entropy
 
-# 调用函数，替换'directory_path'为您的目录路径
-texts_directory_path = 'D:\\PyCharmProject\\BUAA\\NLP\\小作业1\\中文语料库'  # 假设您的.txt文件存储在这个目录下
+# 调用函数
+texts_directory_path = 'D:\\PyCharmProject\\BUAA\\NLP\\小作业1\\中文语料库' 
 txt = read_multiple_txt_files(texts_directory_path)
 text = str(txt) # 类型转换
 
