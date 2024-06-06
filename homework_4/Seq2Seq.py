@@ -82,7 +82,6 @@ def build_vocab(sentences):
     return vocab
 
 
-
 vocab = build_vocab(tokenized_sentences)
 dataset = NovelDataset(tokenized_sentences, vocab)
 loader = DataLoader(dataset, batch_size=8, shuffle=True, collate_fn=NovelDataset.collate_fn)
@@ -146,7 +145,6 @@ class Seq2Seq(nn.Module):
         return outputs
 
 
-
 # 参数设定
 INPUT_DIM = len(vocab)
 OUTPUT_DIM = len(vocab)  # 确保这里正确设置了词汇表大小
@@ -156,7 +154,6 @@ HID_DIM = 512
 N_LAYERS = 2
 ENC_DROPOUT = 0.5
 DEC_DROPOUT = 0.5
-# 如果上述都没有问题，可能需要调整模型初始化的部分：
 enc = Encoder(INPUT_DIM, ENC_EMB_DIM, HID_DIM, N_LAYERS, ENC_DROPOUT)
 dec = Decoder(OUTPUT_DIM, DEC_EMB_DIM, HID_DIM, N_LAYERS, DEC_DROPOUT)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -197,7 +194,6 @@ for epoch in range(1):
 index_to_string = {index: word for word, index in vocab.items()}
 
 
-# 在 generate_text 函数中使用这个映射
 def generate_text(model, start_text, vocab, max_len=100):
     model.eval()
     device = next(model.parameters()).device  # 获取模型正在使用的设备
